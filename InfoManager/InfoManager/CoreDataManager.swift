@@ -12,21 +12,22 @@ import CoreData
 
 class CoreDataManager {
     
-    // Singleton
+//    // Singleton
     static let instance = CoreDataManager()
-    
+
     private init(){}
     
     let managedObjectContext = CoreDataManager.instance.persistentContainer.viewContext
-    
+//    var managedObjectContext = persistentContainer.viewContext
+
     // Entity for Name
     func entityForName(entityName: String) -> NSEntityDescription {
-        return NSEntityDescription.entity(forEntityName: entityName, in: self.managedObjectContext)!
+        return NSEntityDescription.entity(forEntityName: entityName, in: persistentContainer.viewContext)!
     }
     
     // MARK: - Core Data stack
     
-    var persistentContainer: NSPersistentContainer = {
+    lazy  var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -56,7 +57,7 @@ class CoreDataManager {
     // MARK: - Core Data Saving support
     
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = persistentContainer.viewContext //persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
