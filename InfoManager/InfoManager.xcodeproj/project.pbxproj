@@ -22,6 +22,7 @@
 		0424E97C22577E170032F364 /* Services+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E97422577E170032F364 /* Services+CoreDataClass.swift */; };
 		0424E97D22577E170032F364 /* Services+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E97522577E170032F364 /* Services+CoreDataProperties.swift */; };
 		0424E97F22577FAE0032F364 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424E97E22577FAE0032F364 /* CoreDataManager.swift */; };
+		047422D7225B30090032426D /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047422D6225B30090032426D /* CustomerViewController.swift */; };
 		04EBFF2D2258EB9800A2DBE3 /* CustomersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBFF2C2258EB9800A2DBE3 /* CustomersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		0424E97422577E170032F364 /* Services+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0424E97522577E170032F364 /* Services+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0424E97E22577FAE0032F364 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		047422D6225B30090032426D /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
 		04EBFF2C2258EB9800A2DBE3 /* CustomersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				0424E95B225673B50032F364 /* ViewController.swift */,
 				04EBFF2C2258EB9800A2DBE3 /* CustomersTableViewController.swift */,
 				0424E95D225673B50032F364 /* Main.storyboard */,
+				047422D6225B30090032426D /* CustomerViewController.swift */,
 				0424E963225673B70032F364 /* Assets.xcassets */,
 				0424E965225673B70032F364 /* LaunchScreen.storyboard */,
 				0424E968225673B70032F364 /* Info.plist */,
@@ -174,6 +177,7 @@
 				0424E97B22577E170032F364 /* Customer+CoreDataProperties.swift in Sources */,
 				0424E95C225673B50032F364 /* ViewController.swift in Sources */,
 				0424E97722577E170032F364 /* Order+CoreDataProperties.swift in Sources */,
+				047422D7225B30090032426D /* CustomerViewController.swift in Sources */,
 				04EBFF2D2258EB9800A2DBE3 /* CustomersTableViewController.swift in Sources */,
 				0424E97F22577FAE0032F364 /* CoreDataManager.swift in Sources */,
 				0424E962225673B50032F364 /* InfoManager.xcdatamodeld in Sources */,
