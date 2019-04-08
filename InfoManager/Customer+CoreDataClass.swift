@@ -13,8 +13,6 @@ import CoreData
 @objc(Customer)
 public class Customer: NSManagedObject {
     convenience init() {
-//        NSEntityDescription.entity(forEntityName: "Customer", in: persistentContainer.viewContext)
-
         self.init(entity: CoreDataManager.instance.entityForName(entityName: "Customer"), insertInto: CoreDataManager.instance.managedObjectContext)
     }
 }

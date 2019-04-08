@@ -13,8 +13,6 @@ import CoreData
 @objc(Order)
 public class Order: NSManagedObject {
     convenience init() {
-        //        NSEntityDescription.entity(forEntityName: "Order", in: persistentContainer.viewContext)
-        
         self.init(entity: CoreDataManager.instance.entityForName(entityName: "Order"), insertInto: CoreDataManager.instance.managedObjectContext)
     }
 }

@@ -13,8 +13,6 @@ import CoreData
 @objc(Services)
 public class Services: NSManagedObject {
     convenience init() {
-//        NSEntityDescription.entity(forEntityName: "Services", in: persistentContainer.viewContext)!\
-
         self.init(entity: CoreDataManager.instance.entityForName(entityName: "Services"), insertInto: CoreDataManager.instance.managedObjectContext)
     }
 }
