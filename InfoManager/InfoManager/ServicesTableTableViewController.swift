@@ -1,59 +1,58 @@
 //
-//  CustomersTableViewController.swift
+//  ServicesTableTableViewController.swift
 //  InfoManager
 //
-//  Created by mac on 4/6/19.
+//  Created by mac on 4/8/19.
 //  Copyright © 2019 mac. All rights reserved.
 //
 
 import UIKit
 import CoreData
-
-class CustomersTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class ServicesTableTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    @IBAction func AddCustomer(_ sender: Any) {
-        performSegue(withIdentifier: "customersToCustomer", sender: nil)
+    @IBAction func AddServices(_ sender: Any) {
+        performSegue(withIdentifier: "servicesToService", sender: nil)
     }
     
-    var fetchedResultsController = CoreDataManager.instance.fetchedResultsController(entityName: "Customer", keyForSort: "name")
+    let fetchedResultController = CoreDataManager.instance.fetchedResultsController(entityName: "Services", keyForSort: "name")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchedResultsController.delegate = self
+       fetchedResultController.delegate = self
         do {
-            try fetchedResultsController.performFetch()
-        } catch {
+           try fetchedResultController.performFetch()
+        }
+        catch {
             print(error)
         }
     }
-    
-    // MARK: - Table View Data Source
-    
+
+    // MARK: - Table view data source
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let sections = fetchedResultsController.sections {
+        if let sections = fetchedResultController.sections {
             return sections[section].numberOfObjects
         } else {
             return 0
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let customer = fetchedResultsController.object(at: indexPath as IndexPath) as! Customer
+        let services = fetchedResultController.object(at: indexPath as IndexPath) as! Services
         let cell = UITableViewCell()
-        cell.textLabel?.text = customer.name
+        cell.textLabel?.text = services.name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let customer = fetchedResultsController.object(at: indexPath) as! Customer
-        performSegue(withIdentifier: "customersToCustomer", sender: customer)
+        let services = fetchedResultController.object(at: indexPath) as! Services
+        performSegue(withIdentifier: "servicesToService", sender: services)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "customersToCustomer" {
-            let controller = segue.destination as! CustomerViewController
-            controller.customer = sender as? Customer
+        if segue.identifier == "servicesToService" {
+            let controller = segue.destination as! ServiceViewController
+            controller.services = sender as? Services
         }
     }
     
@@ -70,9 +69,9 @@ class CustomersTableViewController: UITableViewController, NSFetchedResultsContr
         case .update:
             if let indexPath = newIndexPath {
                 // получаем по индексу строку и обновляем данные в таблице
-                let customer = fetchedResultsController.object(at: indexPath) as! Customer
+                let services = fetchedResultController.object(at: indexPath) as! Services
                 let cell = tableView.cellForRow(at: indexPath)
-                cell!.textLabel?.text = customer.name
+                cell!.textLabel?.text = services.name
             }
         case .move:
             if let indexPath = indexPath {
@@ -97,11 +96,10 @@ class CustomersTableViewController: UITableViewController, NSFetchedResultsContr
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // получаем текущий объект по индексу
-            let managedObject = fetchedResultsController.object(at: indexPath) as! Customer
+            let managedObject = fetchedResultController.object(at: indexPath) as! Services
             // передаем объект контексту и удаляем его/сохраняем контекст
             CoreDataManager.instance.managedObjectContext.delete(managedObject)
             CoreDataManager.instance.saveContext()
         }
     }
 }
-

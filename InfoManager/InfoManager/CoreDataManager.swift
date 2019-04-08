@@ -17,9 +17,8 @@ class CoreDataManager {
 
     private init(){}
 
-    lazy var managedObjectContext: NSManagedObjectContext = {
-        return CoreDataManager.instance.persistentContainer.viewContext
-    }()
+    lazy var managedObjectContext = CoreDataManager.instance.persistentContainer.viewContext
+    
 
     // Entity for Name
     func entityForName(entityName: String) -> NSEntityDescription {
