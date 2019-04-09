@@ -26,6 +26,7 @@ class CustomerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Reading object
         if let customer = customer {
             nameTextField.text = customer.name

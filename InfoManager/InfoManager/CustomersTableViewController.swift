@@ -11,6 +11,9 @@ import CoreData
 
 class CustomersTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
+    typealias Select = (Customer?) -> ()
+    var didSelect: Select?
+    
     @IBAction func AddCustomer(_ sender: Any) {
         performSegue(withIdentifier: "customersToCustomer", sender: nil)
     }
@@ -46,8 +49,13 @@ class CustomersTableViewController: UITableViewController, NSFetchedResultsContr
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let customer = fetchedResultsController.object(at: indexPath) as! Customer
-        performSegue(withIdentifier: "customersToCustomer", sender: customer)
+        let customer = fetchedResultsController.object(at: indexPath) as? Customer
+        if let dSelect = self.didSelect {
+            dSelect(customer)
+            dismiss(animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "customersToCustomer", sender: customer)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,7 +80,7 @@ class CustomersTableViewController: UITableViewController, NSFetchedResultsContr
                 // получаем по индексу строку и обновляем данные в таблице
                 let customer = fetchedResultsController.object(at: indexPath) as! Customer
                 let cell = tableView.cellForRow(at: indexPath)
-                cell!.textLabel?.text = customer.name
+                cell?.textLabel?.text = customer.name
             }
         case .move:
             if let indexPath = indexPath {

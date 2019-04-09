@@ -19,6 +19,7 @@ class OrdersTableViewController: UITableViewController, NSFetchedResultsControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchResultsController.delegate = self
         // Reading object
         do {
             try fetchResultsController.performFetch()
@@ -38,10 +39,9 @@ class OrdersTableViewController: UITableViewController, NSFetchedResultsControll
         }
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let order = fetchResultsController.object(at: indexPath) as! Order
         let cell = UITableViewCell()
+        let order = fetchResultsController.object(at: indexPath) as! Order
         configCell(cell, order)
         return cell
     }
