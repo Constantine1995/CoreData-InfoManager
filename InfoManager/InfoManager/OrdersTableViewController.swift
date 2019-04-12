@@ -19,7 +19,9 @@ class OrdersTableViewController: UITableViewController, NSFetchedResultsControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchResultsController.delegate = self
+        
         // Reading object
         do {
             try fetchResultsController.performFetch()

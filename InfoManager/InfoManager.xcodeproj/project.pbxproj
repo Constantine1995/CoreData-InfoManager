@@ -27,6 +27,8 @@
 		047422DD225B8DC70032426D /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047422DC225B8DC70032426D /* ServiceViewController.swift */; };
 		047422DF225BC94F0032426D /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047422DE225BC94F0032426D /* OrdersTableViewController.swift */; };
 		047422E1225BCD140032426D /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047422E0225BCD140032426D /* OrderViewController.swift */; };
+		047422E3226098510032426D /* RowOfOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047422E2226098510032426D /* RowOfOrderViewController.swift */; };
+		047422E52260FED00032426D /* ReportTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047422E42260FED00032426D /* ReportTableTableViewController.swift */; };
 		04EBFF2D2258EB9800A2DBE3 /* CustomersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBFF2C2258EB9800A2DBE3 /* CustomersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		047422DC225B8DC70032426D /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceViewController.swift; path = ../ServiceViewController.swift; sourceTree = "<group>"; };
 		047422DE225BC94F0032426D /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrdersTableViewController.swift; path = ../OrdersTableViewController.swift; sourceTree = "<group>"; };
 		047422E0225BCD140032426D /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		047422E2226098510032426D /* RowOfOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RowOfOrderViewController.swift; path = ../RowOfOrderViewController.swift; sourceTree = "<group>"; };
+		047422E42260FED00032426D /* ReportTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReportTableTableViewController.swift; path = ../ReportTableTableViewController.swift; sourceTree = "<group>"; };
 		04EBFF2C2258EB9800A2DBE3 /* CustomersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomersTableViewController.swift; path = ../CustomersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,8 @@
 				047422DC225B8DC70032426D /* ServiceViewController.swift */,
 				047422DE225BC94F0032426D /* OrdersTableViewController.swift */,
 				047422E0225BCD140032426D /* OrderViewController.swift */,
+				047422E2226098510032426D /* RowOfOrderViewController.swift */,
+				047422E42260FED00032426D /* ReportTableTableViewController.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -199,11 +205,13 @@
 				0424E97722577E170032F364 /* Order+CoreDataProperties.swift in Sources */,
 				047422DD225B8DC70032426D /* ServiceViewController.swift in Sources */,
 				047422D7225B30090032426D /* CustomerViewController.swift in Sources */,
+				047422E3226098510032426D /* RowOfOrderViewController.swift in Sources */,
 				04EBFF2D2258EB9800A2DBE3 /* CustomersTableViewController.swift in Sources */,
 				0424E97F22577FAE0032F364 /* CoreDataManager.swift in Sources */,
 				0424E962225673B50032F364 /* InfoManager.xcdatamodeld in Sources */,
 				0424E97A22577E170032F364 /* Customer+CoreDataClass.swift in Sources */,
 				0424E97C22577E170032F364 /* Services+CoreDataClass.swift in Sources */,
+				047422E52260FED00032426D /* ReportTableTableViewController.swift in Sources */,
 				0424E97822577E170032F364 /* RowOfOrder+CoreDataClass.swift in Sources */,
 				0424E95A225673B50032F364 /* AppDelegate.swift in Sources */,
 				047422D9225B89EF0032426D /* ServicesTableTableViewController.swift in Sources */,

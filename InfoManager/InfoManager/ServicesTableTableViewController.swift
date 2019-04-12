@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 class ServicesTableTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
+   typealias Select = (Services?) -> ()
+    var didSelect: Select?
+    
     @IBAction func AddServices(_ sender: Any) {
         performSegue(withIdentifier: "servicesToService", sender: nil)
     }
@@ -46,7 +49,12 @@ class ServicesTableTableViewController: UITableViewController, NSFetchedResultsC
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let services = fetchedResultController.object(at: indexPath) as! Services
+        if let dSelect = didSelect {
+            dSelect(services)
+            dismiss(animated: true, completion: nil)
+        } else {
         performSegue(withIdentifier: "servicesToService", sender: services)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,7 +79,7 @@ class ServicesTableTableViewController: UITableViewController, NSFetchedResultsC
                 // получаем по индексу строку и обновляем данные в таблице
                 let services = fetchedResultController.object(at: indexPath) as! Services
                 let cell = tableView.cellForRow(at: indexPath)
-                cell!.textLabel?.text = services.name
+                cell?.textLabel?.text = services.name
             }
         case .move:
             if let indexPath = indexPath {
